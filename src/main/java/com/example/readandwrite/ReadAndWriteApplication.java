@@ -1,15 +1,25 @@
 package com.example.readandwrite;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 
 @SpringBootApplication
 public class ReadAndWriteApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SpringApplication.run(ReadAndWriteApplication.class, args);
+
+CSVGRABBER csvgrabber = new CSVGRABBER();
+csvgrabber.crawl();
        /* String[] names = {"shaqi", "sameer", "asif"};
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
@@ -23,11 +33,16 @@ public class ReadAndWriteApplication {
             e.printStackTrace();
         }
 */
-        try {
+        /* try {
+         *//*   BufferedReader reader = new BufferedReader(
+                    new FileReader("C:\\Users\\dell pc\\Downloads\\ads.csv"));*//*
             BufferedReader reader = new BufferedReader(
-                    new FileReader("C:\\Users\\dell pc\\Downloads\\ads.csv"));
+                    new FileReader("   BufferedReader reader = new BufferedReader(\n" +
+                            "                    new FileReader(\"C:\\\\Users\\\\dell pc\\\\Downloads\\\\ads.csv\"));"));
             String line;
-            while ((line=reader.readLine())!=null) {
+           // reader.skip(12);
+        //    Files.lines("C:\\Users\\dell pc\\Downloads\\ads.csv");
+             while ((line=reader.readLine())!=null) {
                 System.out.println(line);
             }
             reader.close();
@@ -35,7 +50,9 @@ public class ReadAndWriteApplication {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
+
+
 
     }
 
